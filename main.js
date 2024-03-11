@@ -23,3 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
         playAudio();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var copyTextBtn = document.getElementById("copyDiscord");
+    copyTextBtn.addEventListener("click", function() {
+        // Text to be copied
+        var textToCopy = "cscxdx";
+        
+        // Create a temporary textarea element to hold the text
+        var tempTextArea = document.createElement("textarea");
+        tempTextArea.value = textToCopy;
+        document.body.appendChild(tempTextArea);
+        
+        // Select the text in the textarea
+        tempTextArea.select();
+        
+        // Copy the selected text
+        document.execCommand("copy");
+        
+        // Remove the temporary textarea
+        document.body.removeChild(tempTextArea);
+        
+        // Alert the user that the text has been copied (optional)
+        alert("Copied Discord!");
+    });
+});
